@@ -1,0 +1,69 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<div class="container">
+  <h1>Harvey_Tron</h1><img src="Perlman.jpg" />
+
+	<p>UNL Chancellor Harvey Perlman's <a href="http://www.unl.edu/ucomm/chancllr/sua2013/sua2013_2.shtml">"State of the University Address 2013"</a> was given on September 13th, 2013. In it, Perlman vowed that the university will attempt to increase undergraduate enrollment totals starting in the 2014-2015 academic year and work towards a goal of 30,000 students annually. Perlman lists the increase of student housing, online education, and engagement on a gobal platform as, "critical to our enrollment goals", said Perlman. 
+
+
+    <p><strong>Here are the Enrollment totals of undergraduate students at UNL since 1967:</strong></p>
+
+
+<img src="UNL-Undergraduate-Enrollment-Since-1967-Students_chartbuilder.png" width="80%" style="padding-bottom:10px;" />
+<p>As anyone can clearly see from the chart above, the undergraduate rates for UNL students have never topped 26,000 in one year. The peak year for enrollment, 1982 (25,075) was the closest to reaching Perlman's goal, but was still almost 5,000 students away from reaching the 30,000 student goal.</p>
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Students</th>
+                </tr>
+              </thead>
+              <tbody>
+    {% for year in enrollment %}
+                <tr>
+                  <td>{{ year.Year|int }}</td>
+                  <td>{{ year.Students|int }}</td>
+                </tr>
+{% endfor %}
+                </tbody>
+                </table>
+                </div>
+
+<p>In order for Chancellor Perlman's wishes of increased enrollment to come true, UNL must make the necessary changes to things such as: increasing student housing, Online education, and global engagement with students. Also, increases in the size of tenure track faculty remains at the center of current student enrollment goals. "This is central to our growth plan and essential to our research aspirations. IANR announced a major hiring initiative to increase tenure-track faculty by 10 percent and is on track to complete this hiring by the end of the calendar year", said Perlman.
+  
+<img src="chart_2.png" width="80%"/>
+  
+<p>Although Chancellor Perlman envisions 30,000 undergraduate students enrolled annually at UNL, the Tuition Rates for Resident and Non-Resident students has risen every year since 2009 except for Residents between the 2013-2014 academic years ($6480). Many would agree that in order to grow enrollment rates, UNL must strive to keep Tuition rates low and make it affordable for many students to attend.
+  
+  
+  
+  <div class="col-md-6">
+    <h3>Access data by key</h3>
+    <p><em>Requires a column named <code>key</code>.</em></p>
+
+<pre>
+{{ "<p>" }}
+{{ "  <strong>key1, column 1</strong>:" }} 
+{{ "  {{ keyed_data.key1.column1 }}" }}
+{{ "</p>" }}
+{{ "<p>" }}
+{{ "  <strong>key2, column 2</strong>:" }} 
+{{ "  {{ keyed_data.key2.column2 }}" }}
+{{ "</p>" }}
+</pre>
+
+    <p>Output:</p>
+    <p>
+      <strong>key1, column 1</strong>:
+      {{ keyed_data.key1.column1 }}
+    </p>
+    <p>
+      <strong>key2, column 2</strong>:
+      {{ keyed_data.key2.column2 }}</p>
+  </div>
+</div>
+{% endblock content %}
+
